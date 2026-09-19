@@ -4,7 +4,7 @@
 
 2. Inside your selected folder, run the following command in the terminal to download the project:
     ```
-    git clone https://github.com/FernandaGranadosMonge/Calculator_App.git
+    git clone https://github.com/FernandaGranadosMonge/Calculator_App
     ```
 
 3. Downloading the project will create a folder with the name Calculator_App. Change your directory to the new folder:
@@ -13,12 +13,12 @@
     ```
 
 ## Backend
-4. Navigate to the backend folder
+1. Navigate to the backend folder
     ```
     cd .\backend
     ```
 
-5. Create and activate a virtual environment with the following commands:
+2. Create and activate a virtual environment with the following commands:
     - **Create it**
     ```
     python -m venv .venv
@@ -36,12 +36,24 @@
     | Posix    | pwsh       | `.venv\Scripts\Activate.ps1`     |
 
 
-6. Install dependencies
+3. Install dependencies
     ```
     pip install -r requirements.txt
     ```
 
-7. Run project
+4. Run project
     ```
-    fastapi dev
+    fastapi run
     ```
+
+## Frontend
+1. 
+
+# Design decisions and assumptions
+- I am assuming that "backend microservice" from the requirements refers to this being an independent service that is then integrated into a more complex application, so this backend manages its own server, routes endpoints and logic, rather than creating a service for each operation or something similar to that.
+
+- I decided to make the backend with FastAPI and Python instead of the preferred Go because I am much more familiar with the former and, although learning Go wouldn't be a problem for me, learning Go right now would require this project to take longer than the specified 2-4 hours.
+
+- I decided to only create 1 endpoint --> \calculate
+This is because I wanted to create a clear separation between the frontend and the backend layers. The API endpoint receives the request from the frontend and passes it onto a function that provides the result from the specified operation requested. This means the frontend does not need to manage various endpoints for the calculator service, the API just concerns itself with receiving HTTP requests and sending out JSON responses, and the business logic is separated into its own concise functions with their own restrictions in order to perform the correct calculations.
+Both frontend and backend can scale on their own and more operations can be added by only modifying the business logic of the calculator service.
