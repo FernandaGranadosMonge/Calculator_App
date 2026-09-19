@@ -4,7 +4,6 @@ import services.calculations as calc
 
 router = APIRouter(prefix="/calculate", tags=["calculator"])
 
-
 # This endpoint receives a calculation request that can have 1 or 2 operands and
 # an operation to perform. It passes these arguments to the calculation service
 # and returns a JSON response with the result of the calculation.

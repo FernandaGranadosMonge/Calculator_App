@@ -47,7 +47,52 @@
     ```
 
 ## Frontend
-1. 
+1.  
+
+# Examples of API calling:
+## API called and received success response
+
+1. Request should include a JSON file with operand1, operand2 and operation:
+    ```
+    {
+        "operand1": 200,
+        "operand2": 20,
+        "operation": "add"
+    }
+    ```
+2. Send a POST request to the server address with the request data (in this case localhost:8000):
+    ```
+    POST http://localhost:8000/calculate
+    ```
+3. The response will be as follows:
+    ```
+    With a 200 OK status code
+    {
+        "result": 220.0
+    }
+    ```
+
+## API called and received value error
+
+1. Request should include a JSON file with operand1, operand2 and operation:
+    ```
+    {
+        "operand1": 200,
+        "operand2": 0,
+        "operation": "division"
+    }
+    ```
+2. Send a POST request to the server address with the request data (in this case localhost:8000):
+    ```
+    POST http://localhost:8000/calculate
+    ```
+3. The response will be as follows:
+    ```
+    With a 400 Bad Request status code
+    {
+        "detail": "Cannot divide by zero."
+    }
+    ```
 
 # Design decisions and assumptions
 - I am assuming that "backend microservice" from the requirements refers to this being an independent service that is then integrated into a more complex application, so this backend manages its own server, routes endpoints and logic, rather than creating a service for each operation or something similar to that.
