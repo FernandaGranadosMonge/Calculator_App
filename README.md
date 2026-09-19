@@ -46,6 +46,11 @@
     fastapi run
     ```
 
+5. You can run unit and API tests with
+    ```
+    python -m pytest
+    ```
+
 ## Frontend
 1.  
 
