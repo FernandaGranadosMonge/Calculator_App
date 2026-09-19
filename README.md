@@ -45,6 +45,7 @@
     ```
     fastapi run
     ```
+   This will run the backend server locally at http://localhost:8000
 
 5. You can run unit and API tests with
     ```
