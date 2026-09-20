@@ -124,6 +124,6 @@
 
 - I decided to make the backend with FastAPI and Python instead of the preferred Go because I am much more familiar with the former and, although learning Go wouldn't be a problem for me, learning Go right now would require this project to take longer than the specified 2-4 hours.
 
-- I decided to only create 1 endpoint --> \calculate
+- I decided to only create 1 endpoint --> \calculate\
 This is because I wanted to create a clear separation between the frontend and the backend layers. The API endpoint receives the request from the frontend and passes it onto a function that provides the result from the specified operation requested. This means the frontend does not need to manage various endpoints for the calculator service, the API just concerns itself with receiving HTTP requests and sending out JSON responses, and the business logic is separated into its own concise functions with their own restrictions in order to perform the correct calculations.
 Both frontend and backend can scale on their own and more operations can be added by only modifying the business logic of the calculator service.
