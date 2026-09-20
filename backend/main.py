@@ -9,7 +9,7 @@ app = FastAPI()
 app.include_router(calculations_router)
 
 # We only want to allow requests from our frontend.
-allowed_origins = ["http://localhost"]
+allowed_origins = ["http://localhost:5173"]
 
 # Add CORS middleware which allows requests from the allowed origins list.
 app.add_middleware(

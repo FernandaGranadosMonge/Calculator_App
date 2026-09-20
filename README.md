@@ -53,7 +53,26 @@
     ```
 
 ## Frontend
-1.  
+1. Navigate to the frontend folder
+    ```
+    cd ..
+    cd .\frontend
+    ```
+
+2. Install dependencies
+    ```
+    npm i
+    ```
+
+3. Run project
+    ```
+    npm run dev
+    ```
+
+4. Open your browser and navigate to the local server address to view the calculator
+    ```
+    http://localhost:5173
+    ```
 
 # Examples of API calling:
 ## API called and received success response

@@ -8,7 +8,7 @@ router = APIRouter(prefix="/calculate", tags=["calculator"])
 # an operation to perform. It passes these arguments to the calculation service
 # and returns a JSON response with the result of the calculation.
 @router.post("/", response_model=Response)
-def calculate(req: Request):
+async def calculate(req: Request):
     try:
         result = calc.calculate(
             req.operand1,
