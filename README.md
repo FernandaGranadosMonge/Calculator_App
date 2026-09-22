@@ -52,6 +52,11 @@
     python -m pytest
     ```
 
+5. For the coverage report run
+    ```
+    python -m pytest --cov=. --cov-report=term-missing
+    ```
+
 ## Frontend
 1. Navigate to the frontend folder
     ```
@@ -64,14 +69,25 @@
     npm i
     ```
 
-3. Run project
+d3. Build and run project
     ```
-    npm run dev
+    npm run build
+    npm run preview
     ```
 
 4. Open your browser and navigate to the local server address to view the calculator
     ```
-    http://localhost:5173
+    http://localhost:4173
+    ```
+
+5. You can run unit tests with
+    ```
+    npm run test:run
+    ```
+
+6. To calculate and see the coverage report in the terminal, run
+    ```
+    npm run test:run -- --coverage
     ```
 
 # Examples of API calling:
@@ -126,4 +142,10 @@
 
 - I decided to only create 1 endpoint --> \calculate\
 This is because I wanted to create a clear separation between the frontend and the backend layers. The API endpoint receives the request from the frontend and passes it onto a function that provides the result from the specified operation requested. This means the frontend does not need to manage various endpoints for the calculator service, the API just concerns itself with receiving HTTP requests and sending out JSON responses, and the business logic is separated into its own concise functions with their own restrictions in order to perform the correct calculations.
-Both frontend and backend can scale on their own and more operations can be added by only modifying the business logic of the calculator service.
+Both frontend and backend can scale on their own and more operations can be added by only modifying the business logic of the calculator service and adding buttons to perform these operations.
+
+- For the frontend, I separated the different components into folders in order to keep a clear structure and allow for easier testing. There is a folder for reusable components, another with different functions for the calculator service, another with the interfaces needed and, lastly, one for tests.
+
+- There is an error message shown with Toastify that promptly notifies the user if something went wrong with the application instead of leaving them waiting for a response.
+
+- For unit testing, I decided to use pytest for the backend (because I had already used it before) and vitest for the frontend, since I had already decided to use Vite to aid in development because of its compatibility with React and TypeScript and comfortability for building and starting servers.

@@ -2,6 +2,7 @@ import { useState } from "react";
 import CalculatorButton from "./CalculatorButton";
 import { calculateResult } from "../functions/CalculatorFunctions";
 import type { DataCalculator } from "../interfaces/CalculatorInterfaces";
+import { sendErrorNotification } from "../functions/CalculatorFunctions";
 
 const Calculator = () => {
     const [currNumber, setCurrNumber] = useState("");
@@ -57,6 +58,8 @@ const Calculator = () => {
                 setPrevNumber(result)
                 setCurrNumber("")
                 setOperator(op)
+            } else{
+                sendErrorNotification("Error calculating result.");
             }
         }
     }
@@ -75,6 +78,8 @@ const Calculator = () => {
                 setCurrNumber(result)
                 setPrevNumber("")
                 setOperator("")
+            } else{
+                sendErrorNotification("Error calculating result.");
             }
         }
     }
@@ -97,7 +102,7 @@ const Calculator = () => {
     return (
         <div className="bg-gray-100 p-4 rounded-lg shadow-lg p-6">
 
-            <div className="bg-white p-4 mb-4 text-right text-2xl
+            <div data-testid="display" className="bg-white p-4 mb-4 text-right text-2xl
             shadow-md rounded-lg"> {handleDisplay()} </div>
             <div className="grid grid-cols-4 gap-3">
             <CalculatorButton onClick={() => handleClearClick()} className="col-span-2 opacity-50">
