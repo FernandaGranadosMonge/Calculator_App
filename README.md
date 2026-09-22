@@ -41,13 +41,7 @@
     pip install -r requirements.txt
     ```
 
-4. Run project
-    ```
-    fastapi run
-    ```
-   This will run the backend server locally at http://localhost:8000
-
-5. You can run unit and API tests with
+4. You can run unit and API tests with
     ```
     python -m pytest
     ```
@@ -57,35 +51,42 @@
     python -m pytest --cov=. --cov-report=term-missing
     ```
 
-## Frontend
-1. Navigate to the frontend folder
+6. Run the backend server (It will run locally at http://localhost:8000)
     ```
-    cd ..
+    fastapi run
+    ```
+
+
+## Frontend
+1. Open a new terminal
+2. Navigate to the frontend folder
+    ```
+    cd .\Calculator_App
     cd .\frontend
     ```
 
-2. Install dependencies
+3. Install dependencies
     ```
     npm i
     ```
 
-d3. Build and run project
+4. Build and run project
     ```
     npm run build
     npm run preview
     ```
 
-4. Open your browser and navigate to the local server address to view the calculator
+5. Open your browser and navigate to the local server address to view the calculator
     ```
     http://localhost:4173
     ```
 
-5. You can run unit tests with
+6. You can run unit tests with
     ```
     npm run test:run
     ```
 
-6. To calculate and see the coverage report in the terminal, run
+7. To calculate and see the coverage report in the terminal, run
     ```
     npm run test:run -- --coverage
     ```
