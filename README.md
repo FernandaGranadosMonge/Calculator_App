@@ -70,26 +70,23 @@
     npm i
     ```
 
-4. Build and run project
+4. You can run unit tests with
+    ```
+    npm run test:run
+    ```
+
+5. To calculate and see the coverage report in the terminal, run
+    ```
+    npm run test:run -- --coverage
+    ```
+6. Build and run the frontend server
     ```
     npm run build
     npm run preview
     ```
 
-5. Open your browser and navigate to the local server address to view the calculator
-    ```
-    http://localhost:4173
-    ```
+7. Open your browser and navigate to the local server address to view and test the calculator at http://localhost:4173
 
-6. You can run unit tests with
-    ```
-    npm run test:run
-    ```
-
-7. To calculate and see the coverage report in the terminal, run
-    ```
-    npm run test:run -- --coverage
-    ```
 
 # Examples of API calling:
 ## API called and received success response
